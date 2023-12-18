@@ -37,7 +37,7 @@ Welcome to CommunitySite, your go-to place for community engagement, collaborati
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/CommunitySite.git
+   git clone https://github.com/PriyadharshiniNagarathinam/CommunitySite.git
 
 2. **Navigate to Project Directory:**
    ```bash
