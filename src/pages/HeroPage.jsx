@@ -1,27 +1,33 @@
 import React from 'react'
+
+// Components
 import Navbar from '../components/Navbar'
-import {
-  Button,
-  Container,
-  Typography,
-  Box,
-  CardActionArea,
-  Card,
-  CardMedia,
-  CardContent,
-  Divider,
-  Paper,
-  Stack,
-} from '@mui/material'
-import { styled } from '@mui/material/styles'
+
+// MUI
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Card from '@mui/material/Card'
+import CardActionArea from '@mui/material/CardActionArea'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Container from '@mui/material/Container'
+import Divider from '@mui/material/Divider'
+import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
+import styled from '@mui/material/styles/styled'
+
+// Assets
 import RoadmapSvg from '../assets/roadmap.svg'
 import DiscussSvg from '../assets/discuss.svg'
 import ColabSvg from '../assets/colab.svg'
 import ColaborationImage from '../assets/colaborationImg.jpg'
+import heroImg1 from '../assets/heroImg1.jpg'
+
+// Icons
 import InstagramIcon from '@mui/icons-material/Instagram'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import heroImg1 from '../assets/heroImg1.jpg'
 
 const DemoPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),

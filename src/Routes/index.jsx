@@ -1,14 +1,15 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom'
-import App from '../App'
+
 import SideBar from '../components/sideBar'
 import Home from '../pages/Home'
 import Contact from '../pages/Contact'
 import About from '../pages/About'
+import Root from '../Root'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Root />,
   },
   {
     path: '/user',
