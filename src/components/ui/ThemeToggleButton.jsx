@@ -9,7 +9,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 
 // Components
-import { ThemeContext } from '../components/ThemeProvider'
+import { ThemeContext } from '../ThemeProvider'
 
 const ThemeToggleButton = () => {
   const theme = useTheme()

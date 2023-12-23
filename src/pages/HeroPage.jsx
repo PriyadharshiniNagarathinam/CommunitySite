@@ -2,6 +2,7 @@ import React from 'react'
 
 // Components
 import Navbar from '../components/Navbar'
+import TypingEffect from '../components/ui/TypingEffect'
 
 // MUI
 import Box from '@mui/material/Box'
@@ -30,7 +31,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import FacebookIcon from '@mui/icons-material/Facebook'
 
 const DemoPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
+  padding: theme.spacing(3, 4),
+  borderRadius: '10px',
   ...theme.typography.body2,
   textAlign: 'center',
 }))
@@ -44,40 +46,48 @@ function HeroPage() {
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
+          textAlign: { xs: 'center', md: 'left' },
           padding: '2rem',
         }}
       >
-        <Box sx={{ m: 2, flex: 1, textAlign: 'center' }}>
+        <Box
+          sx={{
+            m: 2,
+            flex: 1,
+            width: { xs: '90%', md: '60%' },
+          }}
+        >
           <Typography
-            variant="h3"
-            sx={{
-              mt: 3,
-              textAlign: 'center',
-              fontSize: { xs: '2rem', md: '3rem' },
-            }}
+            variant="h2"
+            sx={{ fontSize: { xs: '3rem', md: '3.5rem' } }}
           >
-            Code.Create.Collaborate.
+            Let's{' '}
+            <TypingEffect strings={['Code!', 'Collaborate!', 'Contribute!']} />
           </Typography>
-          <Typography variant="h6" sx={{ mt: 1, textAlign: 'center' }}>
+          <Typography
+            variant="body1"
+            sx={{ mt: 1, width: { xs: '100%', md: '75%' } }}
+          >
             Dive into the Code Playground! Let's build, break, and geek out
             together. Join us for tech talks, coding challenges, and endless
             bytes of fun! 💻✨
           </Typography>
-          <Box sx={{ mt: 3, textAlign: 'center', color: 'black' }}>
+          <Box sx={{ mt: 3, color: 'black' }}>
             <Button
               variant="outlined"
+              size="large"
               sx={{
                 color: 'inherit',
                 borderColor: 'inherit',
-                fontSize: '1.2rem',
-                padding: '0.75rem 1.5rem',
+                // fontSize: '1.2rem',
+                // padding: '0.75rem 1.5rem',
               }}
             >
               Join the Community
             </Button>
           </Box>
         </Box>
-        <Box>
+        <Box sx={{ width: { xs: '100%', md: '40%' } }}>
           <img
             style={{
               maxWidth: '100%',
@@ -106,7 +116,7 @@ function HeroPage() {
           }}
         />
         <Typography
-          variant="h6"
+          variant="body1"
           sx={{ textAlign: 'center', maxWidth: '600px', marginBottom: '20px' }}
         >
           We, a bunch of new developers, bound by the desire to learn, grow, and
@@ -122,8 +132,9 @@ function HeroPage() {
             },
           }}
         >
+          {/* TODO: Make it dynamic */}
           <Card sx={{ maxWidth: 345, flex: 1, m: 3, height: '400px' }}>
-            <CardActionArea>
+            <CardActionArea sx={{ height: '100%' }}>
               <CardMedia
                 component="img"
                 height="140"
@@ -153,7 +164,7 @@ function HeroPage() {
             </CardActionArea>
           </Card>
           <Card sx={{ maxWidth: 345, flex: 1, m: 3, height: '400px' }}>
-            <CardActionArea>
+            <CardActionArea sx={{ height: '100%' }}>
               <CardMedia
                 component="img"
                 height="140"
@@ -183,7 +194,7 @@ function HeroPage() {
             </CardActionArea>
           </Card>
           <Card sx={{ maxWidth: 345, flex: 1, m: 3, height: '400px' }}>
-            <CardActionArea>
+            <CardActionArea sx={{ height: '100%' }}>
               <CardMedia
                 component="img"
                 height="140"
@@ -232,6 +243,14 @@ function HeroPage() {
             marginBottom: '30px',
           }}
         />
+        {/* TODO: Change it's content */}
+        <Typography
+          variant="body1"
+          sx={{ textAlign: 'center', maxWidth: '600px', marginBottom: '20px' }}
+        >
+          We, a bunch of new developers, bound by the desire to learn, grow, and
+          collaborate, built our community with
+        </Typography>
         <Box
           sx={{
             display: 'flex',
@@ -250,17 +269,22 @@ function HeroPage() {
             />
           </Box>
           <Stack direction="column" spacing={2} sx={{ flex: '1' }}>
+            {/* TODO: Make it dynamic */}
             <DemoPaper square={false}>
-              <Typography variant="h5">Learn Together</Typography>
-              <Typography>
+              <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+                Learn Together
+              </Typography>
+              <Typography variant="body1" sx={{ mt: 1 }}>
                 No matter where you are in your coding journey, there's always
                 room to learn. Learn alongside fellow developers and benefit
                 from diverse perspectives.
               </Typography>
             </DemoPaper>
             <DemoPaper square={false}>
-              <Typography variant="h5">Sharpen Your Coding Edge</Typography>
-              <Typography>
+              <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+                Sharpen Your Coding Edge
+              </Typography>
+              <Typography variant="body1" sx={{ mt: 1 }}>
                 Engage in our discussion forums and challenge yourself with
                 real-world coding problems. Our diverse community fosters an
                 environment where members actively participate in doubt-solving
@@ -268,8 +292,10 @@ function HeroPage() {
               </Typography>
             </DemoPaper>
             <DemoPaper square={false}>
-              <Typography variant="h5">Knowledge Hub</Typography>
-              <Typography>
+              <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+                Knowledge Hub
+              </Typography>
+              <Typography variant="body1" sx={{ mt: 1 }}>
                 Join our vibrant community where developers of all levels
                 collaborate to solve coding challenges, share insights, and
                 explore the latest technologies together.
@@ -285,12 +311,17 @@ function HeroPage() {
           marginBottom: '30px',
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'center',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <InstagramIcon fontSize="large" sx={{ m: 2 }} />
-        <FacebookIcon fontSize="large" sx={{ m: 2 }} />
-        <LinkedInIcon fontSize="large" sx={{ m: 2 }} />
+        <Typography>&copy; 2021 CommunitySite. All rights reserved.</Typography>
+        <Box>
+          {/* TODO: Make it dynamic and add fake links */}
+          <InstagramIcon fontSize="large" sx={{ m: 2 }} />
+          <FacebookIcon fontSize="large" sx={{ m: 2 }} />
+          <LinkedInIcon fontSize="large" sx={{ m: 2 }} />
+        </Box>
       </Container>
     </div>
   )
