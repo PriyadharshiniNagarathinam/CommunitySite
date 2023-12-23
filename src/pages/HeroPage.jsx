@@ -48,6 +48,7 @@ function HeroPage() {
           alignItems: 'center',
           textAlign: { xs: 'center', md: 'left' },
           padding: '2rem',
+          mt:'60px'
         }}
       >
         <Box
