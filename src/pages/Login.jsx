@@ -15,8 +15,10 @@ import {
 import { useEffect } from 'react'
 import { Google, GitHub } from '@mui/icons-material'
 import { supabase } from '../constants/client'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+  const navigate = useNavigate()
   const handleSubmit = async (event) => {
     try {
       event.preventDefault()
@@ -30,6 +32,9 @@ export default function Login() {
         password: formdata.get('password'),
       })
       if (error) throw error
+      else {
+        navigate('/user')
+      }
     } catch (error) {
       alert(error)
     }
