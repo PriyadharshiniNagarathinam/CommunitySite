@@ -21,6 +21,10 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
+import ExitToAppIcon from '@mui/icons-material/ExitToApp'
+
+import { supabase } from '../constants/client'
+import { useNavigate } from 'react-router-dom'
 
 const drawerWidth = 240
 
@@ -92,9 +96,16 @@ const Drawer = styled(MuiDrawer, {
 export default function SideBar() {
   const theme = useTheme()
   const [open, setOpen] = useState(true)
+  const navigate = useNavigate()
 
   const handleDrawerClose = () => {
     setOpen(false)
+  }
+  async function handleSignOut() {
+    const { error } = await supabase.auth.signOut()
+    if (!error) {
+      navigate('/')
+    }
   }
 
   return (
@@ -128,6 +139,10 @@ export default function SideBar() {
           >
             IT - B Community Site
           </Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          <IconButton color="inherit" onClick={handleSignOut}>
+            <ExitToAppIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

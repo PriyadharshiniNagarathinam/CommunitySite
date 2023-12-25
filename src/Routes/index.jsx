@@ -5,11 +5,21 @@ import Home from '../pages/Home'
 import Contact from '../pages/Contact'
 import About from '../pages/About'
 import Root from '../Root'
+import Register from '../pages/Register'
+import Login from '../pages/Login'
 
-const router = createBrowserRouter([
+const Router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
   {
     path: '/user',
@@ -36,4 +46,4 @@ const router = createBrowserRouter([
   },
 ])
 
-export default router
+export default Router
